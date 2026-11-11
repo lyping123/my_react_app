@@ -37,7 +37,6 @@ function Counter() {
                 </tbody>
             </table>
         </div>
-
     );
 }
 export default Counter;
