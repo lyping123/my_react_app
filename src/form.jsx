@@ -24,22 +24,25 @@ export default function Form() {
     }
 
     return (
-        <div className="form-container">
-            <div className="row">
-                <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id="name" value={name} onChange={(e) => setFish(e.target.value)} name="name" placeholder="Fish name.." />
+        <div className="container">
+            <form>
+                <h3 for="name" className="panel-title">Add New Fish:</h3>
+                <div className="row">
+                    <div className="col-lg-6 col-md-12  mb-3">
+                        <label htmlFor="name" className="form-label">Name</label>
+                        <input type="text" className="form-control" id="name" value={name} onChange={(e) => setFish(e.target.value)} name="name" placeholder="Fish name.." />
+                    </div>
+                    <div className="col-lg-6 col-md-12 mb-3">
+                        <label htmlFor="price" className="form-label">price</label>
+                        <input type="text" className="form-control" id="price" value={price} onChange={(e) => setPrice(e.target.value)} name="price" placeholder="Fish name.." />
+                    </div>
+                    <div for="image" className="mb-3">
+                        <label htmlFor="image" className="form-label">image</label>
+                        <input type="text" className="form-control" id="image" value={image} onChange={(e) => setImage(e.target.value)} name="image" placeholder="Fish name.." />
+                    </div>
+                    <button type="submit" className="btn btn-outline-primary w-50 m-auto p-2" onClick={handleSubmit}>Submit</button>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="price">price</label>
-                    <input type="text" id="price" value={price} onChange={(e) => setPrice(e.target.value)} name="price" placeholder="Fish name.." />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="image">image</label>
-                    <input type="text" id="image" value={image} onChange={(e) => setImage(e.target.value)} name="image" placeholder="Fish name.." />
-                </div>
-                <button type="submit" onClick={handleSubmit}>Submit</button>
-            </div>
+            </form>
         </div>
     );
 

@@ -13,8 +13,8 @@ export default function Image() {
     }, []);
     return (
         fishData.map((fish) => (
-            <div key={fish.id} className="image-border">
-                <img className="image" src={fish.image} alt={fish.name} />
+            <div key={fish.id} className="mt-4 text-center w-100">
+                <img className="rounded mx-auto d-block" src={fish.image} alt={fish.name} />
                 <p className="image-text">{fish.name}</p>
                 <p>Price: ${fish.price}</p>
             </div>
