@@ -1,9 +1,11 @@
 import { useState } from "react";
+import Alert from "./components/alert.jsx";
 
 export default function Form() {
     const [name, setFish] = useState('');
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
+    const [alertbox, setAlert] = useState({ msg: '', type: '', show: false });
     const [fishData, setFishData] = useState([name, price, image]);
 
     const handleSubmit = async (event) => {
@@ -17,14 +19,26 @@ export default function Form() {
                 body: JSON.stringify({ newItems: jsonData }) // Convert to valid JSON string
             });
 
-            if (response.ok) alert('JSON file updated successfully!');
+            if (response.ok) {
+                const data = await response.json();
+                if (data.status === 'success') {
+                    setAlert({ msg: 'Data saved successfully!', type: 'success', show: true });
+                } else if (data.status === 'error') {
+                    setAlert({ msg: data.message, type: 'danger', show: true });
+                }
+            }
+
+
         } catch (error) {
             console.error('Error saving data:', error);
+            setAlert({ msg: 'Data fail to save!', type: 'danger', show: true });
         }
     }
 
     return (
         <div className="container">
+
+            <Alert props={alertbox} />
             <form>
                 <h3 for="name" className="panel-title">Add New Fish:</h3>
                 <div className="row">

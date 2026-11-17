@@ -15,6 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'price' => $fishdata['price'],
             'image' => $fishdata['image']
         ];
+
+        foreach ($jsongetData["fish"] as $item) {
+            if ($item['name'] === $newItem['name']) {
+                echo json_encode(['status' => 'error', 'message' => 'Fish with the same name already exists.']);
+                exit;
+            }
+        }
+
         $jsonData = json_encode($newItem, JSON_PRETTY_PRINT);
 
         $jsongetData["fish"][] = $newItem;
