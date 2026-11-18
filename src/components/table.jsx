@@ -1,0 +1,31 @@
+
+export default function Table({ data, columns, onRemove }) {
+
+    return (
+        <>
+            <table className="table table-striped mt-5">
+                <thead>
+                    <tr>
+                        {columns.map((column) => (
+                            <th key={column.accessor}>{column.header}</th>
+                        ))}
+                        <th>action</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    {data.map((item) => (
+                        <tr key={item.id}>
+                            <td>{item.id}</td>
+                            <td>{item.name}</td>
+                            <td>{item.price}</td>
+                            <td><button className="btn btn-outline-danger" onClick={() => onRemove(item)}>remove</button></td>
+
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </>
+    )
+}
+

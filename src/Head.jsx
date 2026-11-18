@@ -4,6 +4,8 @@ import Image from './components/image.jsx';
 import Form from './form.jsx';
 import Counter from './useState.jsx';
 import Grid from './grid.jsx';
+import Fruits from './fruits.jsx';
+import Fish from './fish.jsx';
 
 
 function Head(props) {
@@ -50,8 +52,8 @@ function Head(props) {
                                         Dropdown
                                     </Link>
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><Link className="dropdown-item" to="/action">Action</Link></li>
-                                        <li><Link className="dropdown-item" to="/another-action">Another action</Link></li>
+                                        <li><Link className="dropdown-item" to="/fruits">Fruits</Link></li>
+                                        <li><Link className="dropdown-item" to="/fish">Fish</Link></li>
                                         <li><Link className="dropdown-item" to="/something-else">Something else here</Link></li>
                                     </ul>
                                 </li>
@@ -67,6 +69,8 @@ function Head(props) {
                     <Route path="/image" element={<Image />} />
                     <Route path="/form" element={<Form />} />
                     <Route path="/grid" element={<Grid />} />
+                    <Route path="/fruits" element={<Fruits />} />
+                    <Route path="/fish" element={<Fish />} />
                     <Route path="/useState" element={<Counter />} />
                 </Routes>
             </BrowserRouter>
