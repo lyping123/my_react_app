@@ -8,9 +8,10 @@ export default function Fruits() {
     }, []);
 
     const fruits = [
-        { id: 1, name: 'Apple', price: '$1.00' },
-        { id: 2, name: 'Banana', price: '$0.50' },
-        { id: 3, name: 'Cherry', price: '$2.00' },
+        { id: 1, name: 'Apple', price: '$1.00', color: 'red' },
+        { id: 2, name: 'Banana', price: '$0.50', color: 'yellow' },
+        { id: 3, name: 'Cherry', price: '$2.00', color: 'red' },
+        { id: 4, name: 'Date', price: '$3.00', color: 'brown' },
     ];
     const columns = [
         { header: 'ID', accessor: 'id' },
